@@ -141,7 +141,7 @@ dependencies: [
 
 为了验证 `print` 语句不会出现在 Release 版本中，我们可以进行以下实验：
 
-1. 在 Xcode 中使用 *File** -> **New** -> **Project...** 创建一个 iOS 的 Single View App。
+1. 在 Xcode 中使用 **File** -> **New** -> **Project...** 创建一个 iOS 的 Single View App。
 2. 安装 `NoPrint`。
 3. 在 `AppDelegate.swift` 文件中引入 `NoPrint` 模块，并在 `application(_ application:didFinishLaunchingWithOptions:)` 方法中添加 `print("Hello world!")` 语句。
 
@@ -167,7 +167,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 7. 此时可以看到 `print("Hello world!")` 实际上调用了 `NoPrint.print`，虽然这个函数已经是一个空函数，不再输出打印，但该函数的调用仍然存在。
-8. 为了让这个函数调用撤掉消失，将 `Build Settings` 中 `Swift Compiler - Code Generation` > `Optimization Level` 选项改为 `Optimize for Size[-Osize]`。
+8. 为了让这个函数调用彻底消失，将 `Build Settings` 中 `Swift Compiler - Code Generation` > `Optimization Level` 选项改为 `Optimize for Size[-Osize]`。
 9. 再次以 Release 模式构建项目，使用工具查看反汇编代码，可以看到 `NoPrint.print` 的函数调用已经消失。
 
 ## 许可
