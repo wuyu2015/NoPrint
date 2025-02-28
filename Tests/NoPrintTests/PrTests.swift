@@ -11,4 +11,10 @@ final class PrTests: XCTestCase {
         pr("⚽️", "🏀", "🎾", "⚾️", separator: "👌")
         // Hello world!,a,b,c >> ⚽️👌🏀👌🎾👌⚾️
     }
+    
+    func testClosure() {
+        pr {
+            return ["a", "b", "c"]
+        }
+    }
 }

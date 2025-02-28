@@ -17,3 +17,13 @@ public func pr(_ items: Any..., separator: String = " ", terminator: String = "\
     Swift.print(items.last!, terminator: terminator)
     #endif
 }
+
+/// This function executes the provided closure and prints its result in debug mode.
+/// In release mode, `pr` does nothing, allowing the compiler to optimize it out.
+/// - Parameter closure: A closure that returns a value to be printed.
+public func pr(_ closure: () -> Any) {
+    #if DEBUG
+    Swift.print(closure())
+    return
+    #endif
+}
