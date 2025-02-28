@@ -9,7 +9,7 @@ public func pr(_ items: Any..., separator: String = " ", terminator: String = "\
     #if DEBUG
     switch items.count {
     case 0:
-        return
+        Swift.print()
     case 1:
         Swift.print(items[0], terminator: terminator)
     default:
