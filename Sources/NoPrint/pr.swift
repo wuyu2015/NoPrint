@@ -7,14 +7,17 @@
 ///   - terminator: A string appended at the end (default is a newline).
 public func pr(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG
-    if items.count == 1 {
-        Swift.print(items[0], terminator: terminator)
+    switch items.count {
+    case 0:
         return
+    case 1:
+        Swift.print(items[0], terminator: terminator)
+    default:
+        for i in 0..<items.count - 1 {
+            Swift.print(items[i], terminator: separator)
+        }
+        Swift.print(items.last!, terminator: terminator)
     }
-    for i in 0..<items.count - 1 {
-        Swift.print(items[i], terminator: separator)
-    }
-    Swift.print(items.last!, terminator: terminator)
     #endif
 }
 

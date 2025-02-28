@@ -2,6 +2,10 @@ import XCTest
 @testable import NoPrint
 
 final class PrintTests: XCTestCase {
+    func test0() {
+        print()
+    }
+    
     func test1() {
         print("Hello world!")
     }
