@@ -54,7 +54,7 @@ To verify that print statements do not appear in the Release build, let's perfor
 
 1. Create a new iOS Single View App using Xcode’s **File** -> **New** -> **Project...**.
 2. Install `NoPrint`.
-3. In the `AppDelegate.swift` file, import the module and add a `print("Hello world!")` statement in the `application(_ application:didFinishLaunchingWithOptions:)` function.
+3. In the `AppDelegate.swift` file, import the module and add a `print("Hello world!")` statement in the `application(_:didFinishLaunchingWithOptions:)` function.
 
 ```swift
 import UIKit
@@ -143,7 +143,7 @@ dependencies: [
 
 1. 在 Xcode 中使用 **File** -> **New** -> **Project...** 创建一个 iOS 的 Single View App。
 2. 安装 `NoPrint`。
-3. 在 `AppDelegate.swift` 文件中引入 `NoPrint` 模块，并在 `application(_ application:didFinishLaunchingWithOptions:)` 方法中添加 `print("Hello world!")` 语句。
+3. 在 `AppDelegate.swift` 文件中引入 `NoPrint` 模块，并在 `application(_:didFinishLaunchingWithOptions:)` 方法中添加 `print("Hello world!")` 语句。
 
 ```swift
 import UIKit
