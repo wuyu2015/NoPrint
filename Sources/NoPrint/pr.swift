@@ -24,6 +24,5 @@ public func pr(_ items: Any..., separator: String = " ", terminator: String = "\
 public func pr(_ closure: () -> Any) {
     #if DEBUG
     Swift.print(closure())
-    return
     #endif
 }
